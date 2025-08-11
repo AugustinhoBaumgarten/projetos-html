@@ -1,0 +1,25 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#login-screen{
+    background-color:white ;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+}
+
+button{
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #005fcc;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Walkie Talkie - Chat</title>
+</head>
+<body>
+  <h2>Olá, <span id="user-nickname"></span>!</h2>
+
+    <div id="chat-box">
+            <!--as mensagens aparecerão aqui-->
+    </div>
+
+    <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+    <button onclick="enviarMensagem()">Enviar</button>
+
+    <script src="WalkieTalkie.js"></script>
+
+    <!--a baixo nao sei exatamente ainda-->
+
+
+  <script>
+    // Pega o apelido salvo no navegador
+    const nickname = localStorage.getItem("apelido");
+
+    // Se tiver apelido, mostra na tela
+    if (nickname) {
+      document.getElementById("user-nickname").textContent = nickname;
+    } else {
+      // Se não tiver, volta pra tela de login
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <a href="index.html">voltar inicio</a>
+</body>
+</html>
