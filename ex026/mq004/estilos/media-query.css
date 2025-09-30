@@ -1,61 +1,114 @@
 @charset "UTF-8";
 
 
-/*Todas as demais mídias*/
+/*Todas as demais mídias
+pequenas telas: até 600px
+celular: até 600px até 768
+tablet:768px até 992px
+desktop: 992px até 1200px
+Grandes telas: acima de 1200px
+*/
 
-@media print{
+@media print{/*impressao*/
     *{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1,3em;
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    body{
+        background-image: url(../imagens/back-print.jpg);
+    }
+    main{
+        border: 2px solid black;
+    }
+    main h1{
+        text-shadow: none;
+        color: black;
+    }
+    main::after{
+        content: 'Essa impressao foi feita atravezx do site Augustinho.com';
+        text-decoration: overline;
+    }
+
+    img#phone{
+    display: none;
+    }
+    img#tablet{
+    display: none;
+    }
+    img#print{
+    display: block;
+    }
+    img#pc{
+    display: none;
+    }
+    img#tv{
+    display: none;
+}
+}
+ 
+
+@media screen and (min-width: 768px)  and (max-width: 992px){/*TABLET*/
+    body{
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+    img#phone{
+    display: none;
+    }
+    img#tablet{
+        display: block;
+    }
+    img#print{
+        display: none;
+    }
+    img#pc{
+        display: none;
+    }
+    img#tv{
+        display: none;
     }
 }
-html{
-    height: 100vh;
 
-}
-body{
-    background: black url(../imagens/back-phone.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
+@media screen and (min-width: 992px) and (max-width:1200px){/*DESKTOP*/
 
-main {
-    background-color: rgba(184, 181, 181, 0.597);
-    width: 80vw;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-h1{
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    text-shadow:  2px 2px 2px rgb(52, 51, 51);
-
-}
-
-img{
+    body{
+        background-image: url(../imagens/back-pc.jpg);
+    }
+    img#phone{
+    display: none;
+    }
+    img#tablet{
+    display: none;
+    }
+    img#print{
+    display: none;
+    }
+    img#pc{
     display: block;
-    margin: auto;
+    }
+    img#tv{
+    display: none;
+    }
 }
-
-img#phone{
+@media screen and (min-width:1200px){
+    /*TELAS GRANDES*/
+    body{
+        background-image: url(../imagens/back-tv.jpg);
+    }
+    img#phone{
+    display: none;
+    }
+    img#tablet{
+    display: none;
+    }
+    img#print{
+    display: none;
+    }
+    img#pc{
+    display: none;
+    }
+    img#tv{
     display: block;
-}
-img#tablet{
-    display: none;
-}
-img#print{
-    display: none;
-}
-img#pc{
-    display: none;
-}
-img#tv{
-    display: none;
+    }
+    main{
+        width: 700px;
+    }
 }
